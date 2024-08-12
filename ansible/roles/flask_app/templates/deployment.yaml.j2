@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ flask_app_app_name }}
+  namespace: {{ flask_app_namespace_name }}
   labels:
     app: {{ flask_app_app_name }}
 spec:

@@ -3,3 +3,4 @@ flask_app_replicas: 1
 flask_app_image_repository: my-flask-app
 flask_app_image_tag: latest
 flask_app_container_port: 5000
+flask_app_namespace_name: validated-pattern-flask-app
