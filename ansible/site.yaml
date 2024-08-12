@@ -15,3 +15,7 @@
     - name: Print output of installation
       ansible.builtin.debug:
         msg: "{{ output }}"
+
+    - name: Deploy Flask application
+      ansible.builtin.include_role:
+        name: flask_app

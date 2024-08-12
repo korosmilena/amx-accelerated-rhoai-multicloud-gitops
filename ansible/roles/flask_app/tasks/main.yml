@@ -1,0 +1,15 @@
+---
+- name: Create Namespace for Flask application
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'namespace.yaml.j2') }}"
+
+- name: Deploy Flask application
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'deployment.yaml.j2') }}"
+
+- name: Create Service for Flask application
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'service.yaml.j2') }}"
