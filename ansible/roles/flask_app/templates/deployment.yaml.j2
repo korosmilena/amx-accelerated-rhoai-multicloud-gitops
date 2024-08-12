@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ app_name }}
+  name: {{ flask_app_app_name }}
   labels:
-    app: {{ app_name }}
+    app: {{ flask_app_app_name }}
 spec:
-  replicas: {{ replicas }}
+  replicas: {{ flask_app_replicas }}
   selector:
     matchLabels:
-      app: {{ app_name }}
+      app: {{ flask_app_app_name }}
   template:
     metadata:
       labels:
-        app: {{ app_name }}
+        app: {{ flask_app_app_name }}
     spec:
       containers:
-      - name: {{ app_name }}
-        image: "{{ image_repository }}:{{ image_tag }}"
+      - name: {{ flask_app_app_name }}
+        image: "{{ flask_app_image_repository }}:{{ flask_app_image_tag }}"
         ports:
-        - containerPort: {{ container_port }}
+        - containerPort: {{ flask_app_container_port }}

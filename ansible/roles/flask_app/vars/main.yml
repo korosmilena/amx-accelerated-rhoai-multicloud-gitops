@@ -1,5 +1,5 @@
-app_name: flask-app
-replicas: 1
-image_repository: my-flask-app
-image_tag: latest
-container_port: 5000
+flask_app_app_name: flask-app
+flask_app_replicas: 1
+flask_app_image_repository: my-flask-app
+flask_app_image_tag: latest
+flask_app_container_port: 5000
