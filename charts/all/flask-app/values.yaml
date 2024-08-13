@@ -6,7 +6,7 @@ flask_app:
   image_repository: flask-app-image
   image_tag: latest
   container_port: 5000
-  repository: "https://github.com/korosmilena/amx-accelerated-rhoai-multicloud-gitops"
+  repository: "https://github.com/korosmilena/amx-accelerated-rhoai-multicloud-gitops.git"
   gitRef: "main"
   contextDir: "charts/all/flask-app/files"
   dockerfilePath: Dockerfile
