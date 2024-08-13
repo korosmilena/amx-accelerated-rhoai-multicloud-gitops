@@ -1,0 +1,12 @@
+global:
+  namespace: flask-app-namespace
+flask_app:
+  app_name: flask-app
+  replicas: 1
+  image_repository: flask-app-image
+  image_tag: latest
+  container_port: 5000
+  repository: "https://github.com/korosmilena/amx-accelerated-rhoai-multicloud-gitops"
+  gitRef: "main"
+  contextDir: "charts/all/flask-app/files"
+  dockerfilePath: Dockerfile

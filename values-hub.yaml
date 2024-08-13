@@ -7,6 +7,7 @@ clusterGroup:
     - golang-external-secrets
     - config-demo
     - hello-world
+    - flask-app-namespace
     - redhat-ods-operator:
         operatorGroup: true
         targetNamespaces:
@@ -32,6 +33,7 @@ clusterGroup:
     - hub
     - config-demo
     - hello-world
+    - flask-app
     - redhat-ods-operator
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
@@ -94,6 +96,11 @@ clusterGroup:
       namespace: openshift-operators
       project: redhat-ods-operator
       path: charts/all/openvino
+    flask-app: 
+      name: flask-app
+      namespace: flask-app-namespace
+      project: flask-app
+      path: charts/all/flask-app
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule
