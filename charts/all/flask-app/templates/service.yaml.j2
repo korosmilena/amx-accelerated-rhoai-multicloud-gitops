@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.flask_app.app_name }}
+  namespace: {{ .Values.global.namespace }}
+spec:
+  selector:
+    app: {{ .Values.flask_app.app_name }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: {{ .Values.flask_app.container_port }}

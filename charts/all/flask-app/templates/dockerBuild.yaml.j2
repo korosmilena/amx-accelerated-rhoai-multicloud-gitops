@@ -1,0 +1,23 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.global.namespace }}
+spec:
+  source:
+    type: Git
+    git:
+      uri: "{{ .Values.flaskApp.repository }}"
+      ref: "{{ .Values.flaskApp.gitRef }}"
+    contextDir: "{{ .Values.flaskApp.contextDir }}"
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: "{{ .Values.flaskApp.dockerfilePath }}"
+  output:
+    to:
+      kind: ImageStreamTag
+      name: '{{ .Chart.Name }}:latest'
+  triggers:
+  - type: ConfigChange
+  - type: ImageChange

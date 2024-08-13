@@ -1,0 +1,8 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: {{ .Values.flask_app.app_name }}
+  namespace: {{ .Values.global.namespace }}
+spec:
+  lookupPolicy:
+    local: true
