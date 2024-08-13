@@ -17,7 +17,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'flask-app:latest'
+      name: '{{ .Values.flask_app.image_repository }}:{{ .Values.flask_app.image_tag }}'
   triggers:
   - type: ConfigChange
   - type: ImageChange
