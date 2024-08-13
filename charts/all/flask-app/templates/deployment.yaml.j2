@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: {{ .Values.flask_app.app_name }}
-        image: "{{ .Values.flask_app.image_repository }}:{{ .Values.flask_app.image_tag }}"
+        image: 'flask-app:latest'
         ports:
         - containerPort: {{ .Values.flask_app.container_port }}
