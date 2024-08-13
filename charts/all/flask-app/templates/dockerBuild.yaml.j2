@@ -7,13 +7,13 @@ spec:
   source:
     type: Git
     git:
-      uri: "{{ .Values.flaskApp.repository }}"
-      ref: "{{ .Values.flaskApp.gitRef }}"
-    contextDir: "{{ .Values.flaskApp.contextDir }}"
+      uri: "{{ .Values.flask_app.repository }}"
+      ref: "{{ .Values.flask_app.gitRef }}"
+    contextDir: "{{ .Values.flask_app.contextDir }}"
   strategy:
     type: Docker
     dockerStrategy:
-      dockerfilePath: "{{ .Values.flaskApp.dockerfilePath }}"
+      dockerfilePath: "{{ .Values.flask_app.dockerfilePath }}"
   output:
     to:
       kind: ImageStreamTag
